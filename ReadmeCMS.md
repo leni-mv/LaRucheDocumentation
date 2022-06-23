@@ -1,11 +1,11 @@
 # Test CMS monsitevert
 
-Tests du CMS monsitevert et rédaction d'une documentation.
+Tests du CMS monsitevert et rédaction d'une documentation. Son fonctionnement s'appuie sur la doc du site GrapesJS.
 
 # Dashboard documentation
 
 ## Pages
-Créer une nouvelle page ou modifier une page existante.
+Créer une nouvelle page ou modifier une page existante. Fontawesome est pré-intégré.
 
 ### Premier menu en haut à droite (vert)
 
@@ -16,12 +16,20 @@ Créer une nouvelle page ou modifier une page existante.
 
 ### Espace de travail à droite, menu :
 - Gestionnaire de blocks permet d'ajouter les blocks avec un système de drag and drop et quelques otpions supplémentaires (ajout de texte et de formulaire par exemple. Notes :
+    - Basique : pop-up ce déclenche à partir du block ou de la page où elle est posée. L'outil qui ressemble à un chéquier quand on passe la souris dessus permet d'ajouter le texte qu'elle affichera.
     - Composant > Option permet de placer une petite image liée à un petit texte
-    - Forms : La plupart des éléments de cette section ont besoin du block Form pour être intégré à la page.
+    - Forms : La plupart des éléments de cette section ont besoin du block Form pour être intégré à la page. Dans Dashboard > Paramètre > Formulaire de contact on intègre l'email qui reçoit les demandes. Ensuite dans les paramètres de notre formulaire on choisi la méthode et on intègre ce lien en action **/form/submit?redirectTo=/index**.
+    - Extra :
+        - Countdown : le compteur peut-être mis en place via l'icône de paramètre des blocks.
+        - CustomCode : si appliquée sur le body efface la page au profit du nouveau code.
+
 - Gestionnaire de calques ou architecture sémantique de la page : Permet de voir la hiérarchie des éléments dans le corps de page et de les pointer avec plus de précision en cliquant dessus. (Pratique pour les lignes dans des blocs ou les HR)
+
 - Pinceaux/Gestionnaire de style permet une stylisation rapide du block par rapport à sa position, sa taille et des paramètres de font.
+
 - Icône paramètres pour voir les paramètres en code (type de balise, id du block, etc). Ces paramètres changent selon le bloc (c'est ici qu'on mets les pages de liens des blocs "lien" par exemple).
-- Open code: permet de modifier en code le bloc (avec html et css). On peut ajouter, modifier du texte, etc. Le css s'ajouté avec la propriété style dans la balise html est séparé dans un block css à part à l'enregistrement. Ensuite en sauvegardant un id est automatiquement généré pour ranger le css dans la section correspondante. Si on ne click pas sur "Sauvegarder" (en haut du bloc html et css) le code ajouté est perdue.
+
+- Open code: permet de modifier en code le bloc (avec html et css). On peut ajouter, modifier du texte, etc. Le css s'ajouté avec la propriété style dans la balise html est séparé dans un block css à part à l'enregistrement. Ensuite en sauvegardant un id est automatiquement généré pour ranger le css dans la section correspondante. Si on ne click pas sur "Sauvegarder" (en haut du bloc html et css) le code ajouté sera perdue en changeant de section(block dans la page ou panneau d'outil).
 
 ### Menu de l'espace de travail permettant de visualiser la page et ajouter des éléments
 - Permet grâce à des bordures dashed
@@ -31,10 +39,12 @@ Créer une nouvelle page ou modifier une page existante.
 ## Articles
 ## Catégories
 ## Menus
+- Les liens de pages sont créer avec le slug ou /nomDeLaPage dans la création de page en paramètre et dans la création de menu en paramètre des lien qu'on ajoute à nos menus
+
 ## Thème
+Permet de configurer la vue du header et du footer ainsi que l'ammbiance graphique du site. On ne peut pas créer un thème, seulement modifier celui créer par monsitevert pour nous.
 
 ## Paramètres
-
 Dans cette section il est possible de prédéfinir plusieurs comportements via les sections suivantes :
 
 ### Global
@@ -44,58 +54,37 @@ Dans cette section il est possible de prédéfinir plusieurs comportements via l
 ### SEO
 - Permet de choisir la langue, le comportement du robot, de nouveau l'URL du site, lien page 404 (à créer dans pages) avec son titre et sa description, lien utilisateur Twitter, image mise en avant et Id+json
 ### Formulaire de contact
-- adresse email reçevant les demandes de contact et options de reCAPTCHA
+- adresse email reçevant les demandes de contact et options de reCAPTCHA. Cette section sera changée pour être adaptée à plusieurs formulaires. 
 
 # Travail perso et questions pour mieux comprendre le CMS
 
 ## To do
 
-- Image d'accueil mettre par dessus "La Ruche" avec effet d'ombrage pour que le texte se voit.
-- Coller map au texte (il y a un bloc texte et image, si on peut mettre map dedans ce serait trop parfait !!)
-- Entre la map et le bien vivre bien travailler mettre 3-4 emplacements images pour les photos des lieux
-- Coller pointes images bien vivre bien travailler : les redimensionner ppour qu'elles prenent 50% de l'espace (css width 100% du block ou canva). Voir pour modifier taille de l'image.
-- Média queries pour rendre responsive cette partie et la partie map si besoin;
-
-- Voir comment intégrer des petits symboles pour styliser
-- On ne peut pas ajouter un block sur une image (prévue comme image de fond). Besoin d'aller dans le code pour en faire une image background. Je test comme ça mais pas sûr que ça marche oo
+- Média queries pour rendre responsive cette partie et la partie map si besoin
+- re-trouver comment mettre titre site dans entête thème (rapport avec le logo de mémoire)
+- Page > Contact : faire wrapper, déplacer les input sous les labels (là c'est moche)
 
 
 ## Questions et remarques
 
-- Liens :
-    - Où est-ce qu'on obtiens les liens de pages (si il s'agit bien d'une demande de lien de page) pour les mettre dans les thèmes du site par exemple ?
-    - Est-ce que dans Pages > Paramètre de page c'est le nom ou le slug de la page qu'on utilise ?
+- Beug pris en compte: l'outil code du panneau d'outils à droite ne garde pas en affichage la média query codée sur l'élément.
 
-- Dans paramètre > SEO :
-    - Qu'est-ce que index, follow, noindex, nofollow ?
-    - L'image mise en avant apparait dans le navigateur de recherche ?
-    - Qu'est-ce que Id+json ?
+- Comment créer une bordure sur le texte et non sur le block de texte sans passer par le code ?
 
+- Block > Extras > CustomCode : efface aussi entête et pied de page défini en Thème ? Ou seulement le body ?
 
-- qu'est-ce que les classes "hero-section" et "hero-content" (vous avez une documentation concernant vos classes ?)
+- Remarque : Création de page > Gestionnaire de style > Décoration > Calque : le premier calque a par défaut moins de paramètres que le deuxième qu'on ajoute.
 
-- Dans page > basique qu'est-ce que :
-    - tooltip
-    - Accordéon ? (genre de dropdown ?)
-    - tabs (j'ai pas compris comment ça s'utilise)
-    - Pop-up : on la lie à un bouton ou à une page pour qu'elle se déclenche ?
-    - Lien (question posée plus haut) comment lier les pages entre elles ?
-    - La différence entre conteneur et block
-- Après basic > grille :
-    - Conteneur + 2colonnes : je ne trouves pas les colonnes en passant la souris et elles n'aparaissent pas dans le corps
-    - Quand j'ajoute d'autres éléments ils apparaissent dans le corps mais quand je passe la souris je n'ai que le bloque mère
-    - Qu'est-ce que "cellule"
-- After > Extra :
-    - comment s'utilise le Countdown ? C'est un compteur automatique ?)
-    - Custom Code c'est la même chose que dans l'icône code (on ne mets que du html/css, ou on peut faire autre chose ? Et je n'arrive pas à l'utiliser)
+- Remarque : les conteneurs ont une marge supérieur négative (manque 9px en ordi et tablette et 8px en mobile) et déborde sur les autres éléments.
 
-- Parfois le block devient une ligne (par quel processus ? Utilisation de flexboxs ?), comportement différent d'un bloc : rajoute de la marge sur la vue en desktop entre 2 colonnes. Pour sections "bien vivre et bien travailler" j'ai dû mettre le fond sur la ligne plutôt que sur la colonne pour qu'il n'y ai pas de marge entre la couleur et la photo.
+- thème en-tête secondaire la couleur secondaire ne change pas quand on modifie le rgb oo'
 
+- Remarque : les nom de champs de couleurs pour theme ne sont pas très clair, on ne sait pas exactement si ça va coloré des blocs, des titres, des noms de champs(label ou input par exempl), ect.
 
-- Remarque : quand on cherche dans le code (un id par exemple) ce serait pratique d'avoir un genre de Ctrl + f pour trouver les id (et classe) rapidement.
+- Comment changer la couleur d'un élément en classe active dans le menu défini en theme ?
 
-- Je n'arrive pas à mettre un block par dessus une image que je voulais en fond (La Ruche en acceuil et le formulaire de contact sur page contact *-*)
+- A partir d'un boutton dans la page (Nous contacter par exemple) comment créer des liens vers d'autres pages ?
 
-- l'outil code du panneau d'outils à droite ne garde pas en affichage la média query codée sur l'élément, il faut les chercher dans le fichier code source de la page. Pas très pratique pour vérifier et modifier/adapter le code. (media query only screen c'est les miens)
+- Peut-on rendre "hidden" un élément sans toucher au code ?
 
-- Sur contact button "envoyer", comment s'assurer que ça marche ?
+- Remarque : Bloc flexbox : les marges entre deux éléments ou deux flexboxs se décallent et ont besoin d'être bidouillée pour que ce soit droit (y compris en mode tablette)

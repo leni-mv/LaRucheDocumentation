@@ -10,4 +10,4 @@ yellow : #fcf24a
 - Whereframe 
 - Création d'un premier jet sur le CMS pour la page d'acceuil et contact
 - Révision du visuel avec le chef de projet
-- Modifications en cours
+- Modifications en cours + session de présentation du CMS
