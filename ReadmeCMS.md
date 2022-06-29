@@ -33,7 +33,7 @@ Raccourcis utiles avant de regarder les menus :
 |   Pop-up    |   Pop_up qui se déclanche à partir du bloque ou de la page sur laquelle elle a été posée.  |     L'outil qui ressemble à un chéquier quand on selectionne ce block permet d'ajouter le texte qu'elle affichera.    |
 |   Texte    |   Insère du texte    |       |
 |   Image    |   Insère une image    |   A l'insertion du block une fenêtre nous permet de déposer ou d'ajouter l'url d'images et d'en choisir une pour le block. En sélectionnant l'image dans la page, la barre d'outil du block affiche un crayon : outil de modification de l'image.     |
-|   Lien    |   Créer un lien dans la page    |   On paramètre les liens dans l'onglet de paramètre    |
+|   Lien    |   Créer un lien dans la page    |   On paramètre les liens dans l'onglet de paramètre. Pour ajouter une page ou un article en lien on prends son slug (dans les paramètres globaux de la page visée) et on l'ajoute au chemin du lien en paramètres.    |
 |   Bloc    |   Conteneur sans marge pour organiser les sections de la page.    |   Aucunes marges    |
 |   Séparateur    |    HR   |       |
 |   Liste    |   Liste à puce    |       |
@@ -116,7 +116,7 @@ Permet de créer des catégories pour les articles ce qui permettra ensuite de f
 
 ## Thème
 Permet de créer l'ambiance graphique du site. On ne peut pas créer un thème, seulement modifier celui créer par monsitevert pour nous.
-- Entête : permet de donner le titre en logo du site.
+- Entête : permet de donner le titre en logo du site et de lui passer un slug pour qu'il retourne une page (note: est prévu de lui passer une page sinon error 404 si l'utilisateur click dessus).
 - Bas de page : permet d'ajouter du texte et du texte de copyright dans le footer.
 - La section "Style" donne une couleur principal et une couleur de contraste pour les éléments principaux et secondaires du site, le header, le footer, les pages, les articles ainsi que la police et la taille d'écriture par défaut des titres et textes du site.
 - "Code personalisé : Permet d'ajouter du code à la fin de la balise head pour le navigateur et à la fin de la balise body pour les pages.
@@ -168,9 +168,7 @@ Permet de changer les informations de compte (nom, mail, mdp).
 
 ## To do
 
-- Média queries pour rendre responsive cette partie et la partie map si besoin
 - re-trouver comment mettre titre site dans entête thème (rapport avec le logo de mémoire)
-- Page > Contact : faire wrapper, déplacer les input sous les labels (là c'est moche)
 
 
 ## Questions et remarques
@@ -212,4 +210,10 @@ Permet de changer les informations de compte (nom, mail, mdp).
 
 - Page > Article1 : Le bloc de lien et image ne se plie pas a la border radius de son bloc parent (le bloc de colonne).
 
-- Si l'on souhaite un effet d'animation (hover par exemple) il faut le rajouter dans la partie code du CSS ?
+- Si l'on souhaite un effet d'animation (hover par exemple) il faut le rajouter dans la partie code du CSS.
+
+- Remarque : surplux de marge à droite : beug du block container
+
+- Peut-on retiré la marge par défaut pour tablette et mobile (car même en mettant tout à 0 une marge subsiste sur ces deux templates)
+
+- Remarques : Image > Crayon de modification > Menu en haut > historique : On a pas l'historique de modifications (qui serait très utile pour retourner en arrière) mais seulement un dossier load.

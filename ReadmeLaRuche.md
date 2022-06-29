@@ -5,6 +5,11 @@ black: rgba(0,0,0,0.75)
 Dans le contenu :
 yellow : #fcf24a
 
+bien vivre
+color : rgba(0, 0, 0, 0.04)
+bien travailler
+color: rgba(252,242,74,0.54)
+
 ## Tâches effectuées
 
 - Whereframe 
